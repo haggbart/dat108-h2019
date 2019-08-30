@@ -12,7 +12,7 @@ public class F04b_filtrering {
 		System.out.println(listen);
 		
 		//1 - På "gamlemåten" der Betingelse er representert ved en konkret klasse
-		filtrertListe = filter(listen, new PartallBetinglese());
+		filtrertListe = filter(listen, new PartallBetingelse());
 		System.out.println(filtrertListe);
 		
 		//2 - Lambdauttrykk
@@ -58,7 +58,7 @@ interface Betingelse {
 }
 
 // En implementasjon av Betingelse til bruk i filter()
-class PartallBetinglese implements Betingelse {
+class PartallBetingelse implements Betingelse {
 	@Override
 	public boolean erOppfylt(int tall) {
 		return tall % 2 == 0;
