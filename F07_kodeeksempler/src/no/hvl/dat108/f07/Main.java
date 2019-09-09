@@ -34,7 +34,7 @@ public class Main {
 
 		System.out.println("\nNavnet på en utvikler som kan C#, eller \"INGEN\" om ingen kan C#:");
 		String navnPaaEnSomKanCSharp = utviklere.stream()
-				.filter(u -> u.getSpraak().contains("C##"))
+				.filter(u -> u.getSpraak().contains("C#"))
 				.map(u -> u.getNavn())
 				.findAny()
 				.orElse("INGEN");
