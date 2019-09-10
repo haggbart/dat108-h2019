@@ -19,7 +19,7 @@ public class HelloTomeeServlet extends HttpServlet {
 
 		// Auto-generated method stub!
 		// ... with expected response: HTTP Status 405 – Method Not Allowed
-        // super.doGet(req, resp);
+		// super.doGet(req, resp);
 		
 		resp.setContentType("text/plain; charset=ISO-8859-1");
 		resp.getWriter().println("Hello TomEE !!!");
