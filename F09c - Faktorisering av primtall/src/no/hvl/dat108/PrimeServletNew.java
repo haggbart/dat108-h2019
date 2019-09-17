@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.math3.primes.Primes;
 
 @WebServlet("/prime")
-public class PrimeServlet extends HttpServlet {
+public class PrimeServletNew extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,7 +33,6 @@ public class PrimeServlet extends HttpServlet {
 			} else {
 				erPrimtallTekst = " er ikke et primtall";
 			}
-			//alternativt med ternær op
 
 			response.setContentType("text/html");
 
