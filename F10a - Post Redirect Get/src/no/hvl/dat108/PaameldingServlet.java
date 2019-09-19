@@ -25,5 +25,4 @@ public class PaameldingServlet extends HttpServlet {
 		out.println("Du er herved påmeldt, " + navn);
 	}
 	
-       
 }
