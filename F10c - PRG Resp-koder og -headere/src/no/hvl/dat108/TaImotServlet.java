@@ -11,14 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 public class TaImotServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		
-		//Målet med hele greien er å skrive ut på en side den hemmelige meldingen
-		//som er "skjult" i en hidden parameter.
-		
-		//Repeter PRG. Deretter sjekk med F12 hva som skjer!!!
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		String data = request.getParameter("data");
+		
+		request.getSession().setAttribute("hemmelig", data);
+		
+		response.sendRedirect("kvittering");
 	}
 
 }
