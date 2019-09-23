@@ -9,22 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/paamelding")
-public class PaameldingServlet extends HttpServlet {
+@WebServlet("/kvittering")
+public class KvitteringServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-		protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String navn = request.getParameter("navn");
-//		response.sendRedirect("kvittering?navn=" + navn);
+//		String navn = request.getParameter("navn");
 		
-		request.getSession().setAttribute("navn", navn);
-		response.sendRedirect("kvittering");
+		String navn = (String) request.getSession().getAttribute("navn");
 		
-		
-		
+		response.setContentType("text/plain");
+		PrintWriter out = response.getWriter();
+		out.println("Du er herved påmeldt, " + navn);
 	}
+
 	
 }
 

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.openejb.server.httpd.HttpSession;
+
 @WebServlet("/" + LOGOUT_URL)
 public class LoggUtServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -20,6 +22,10 @@ public class LoggUtServlet extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
 
         // Inn noe kode her i forbindelse med utlogging av bruker?
+		HttpSession sesjon = request.getSession(false);
+		if (sesjon != null) {
+			sesjon.invalidate();
+		}
         
         response.setContentType("text/html; charset=ISO-8859-1");
 
