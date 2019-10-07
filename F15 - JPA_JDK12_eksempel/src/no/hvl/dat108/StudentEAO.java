@@ -11,6 +11,22 @@ public class StudentEAO {
 	
 	@PersistenceContext(name = "studentPU")
     private EntityManager em;
+	
+//	public Klasse hentKlasse(String klassekode) {
+//		return em.find(Klasse.class, klassekode);
+//	}
+	
+	public void leggTilStudent(Student s, String klassekode) {
+		
+//		Klasse klasse = hentKlasse("17hData");
+//		evt. inlinet som:
+		Klasse klasse = em.find(Klasse.class, klassekode);
+		
+		s.setKlasse(klasse);
+		klasse.addStudent(s);
+		em.persist(s);
+	}
+	
 
 	public List<Student> hentKlasselisteFor(String klassekode) {
 		// Her utnytter jeg toveis navigasjon!

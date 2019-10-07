@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "f15demo_2018", name = "student")
+@Table(schema = "f15demo", name = "student")
 public class Student {
 
     @Id
@@ -30,10 +30,21 @@ public class Student {
 		return klasse;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setNavn(String navn) {
+		this.navn = navn;
+	}
+
+	public void setKlasse(Klasse klasse) {
+		this.klasse = klasse;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", navn=" + navn + ", klasse=" + klasse.getKode() + "]";
 	}
-	
 	
 }

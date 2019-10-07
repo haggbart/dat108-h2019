@@ -8,7 +8,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "f15demo_2018", name = "klasse")
+@Table(schema = "f15demo", name = "klasse")
 public class Klasse {
 
     @Id
@@ -17,7 +17,7 @@ public class Klasse {
 
     @OneToMany(mappedBy = "klasse")
     private List<Student> studenter;
-
+    
 	public String getKode() {
 		return kode;
 	}
@@ -30,6 +30,8 @@ public class Klasse {
 		return studenter;
 	}
     
-    
+    public void addStudent(Student s) {
+    	studenter.add(s);
+    }
     
 }
